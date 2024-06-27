@@ -11,8 +11,6 @@ type AssetType = {
   hour_24_change_percent: string;
 };
 
-type Props = {};
-
 const fetchAssets = async () => {
   const response = await fetch(`${process.env.API_URL}/api/assets`, {
     next: {
@@ -20,11 +18,11 @@ const fetchAssets = async () => {
     },
   });
 
-  const data: any = await response.json();
+  const data = await response.json();
   return data;
 };
 
-const AssetsListTable = async (props: Props) => {
+const AssetsListTable = async () => {
   const assets = await fetchAssets();
   return (
     <div className="flex w-full max-w-full flex-1 flex-col items-start justify-start">

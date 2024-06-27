@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   return (
     <header className="z-20 flex w-full flex-row items-center justify-between gap-5">
       <nav className="flex w-full items-center justify-between px-0 pb-0 pt-2.5">

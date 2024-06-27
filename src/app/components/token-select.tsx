@@ -10,7 +10,7 @@ export type TokenSelectType = {
     balance: string;
     image: string;
   };
-  onSelectToken: (token: any) => void;
+  onSelectToken: (token: { name: string; balance: string; image: string }) => void;
 };
 
 const tokens = [

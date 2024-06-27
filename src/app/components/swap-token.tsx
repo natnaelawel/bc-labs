@@ -1,8 +1,8 @@
 'use client';
 
 import type { NextPage } from 'next';
+import { useState } from 'react';
 import TokenSelect from './token-select';
-import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 
 export type ComponentType = {
