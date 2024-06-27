@@ -12,14 +12,20 @@ type AssetType = {
 };
 
 const fetchAssets = async () => {
-  const response = await fetch(`${process.env.API_URL}/api/assets`, {
-    next: {
-      revalidate: 5, // revalidate every 5 seconds
-    },
-  });
+  try {
+    const response = await fetch(`${process.env.API_URL}/api/assets`, {
+      method: 'GET',
+      next: {
+        revalidate: 5, // revalidate every 5 seconds
+      },
+    });
 
-  const data = await response.json();
-  return data;
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching assets:', error);
+    return [];
+  }
 };
 
 const AssetsListTable = async () => {
